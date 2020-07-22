@@ -15,7 +15,19 @@ export default function Footer() {
             <img className="mx-4" src={twi} alt="twitter"/>
             <img className="mx-4" src={ins} alt="twitter"/>
             <img className="mx-4" src={fab} alt="twitter"/>
-            <img className="mx-4" src={lin} alt="twitter"/>      
+            <img className="mx-4" src={lin} alt="twitter"/>  
+            <hr style={{background: '#D8D8D8', marginBottom: '1.2rem'}}/>
+            <a className="mx-2 ft" href='/'>Home</a>
+            <a className="mx-2 ft" href='/'>Our Services</a>
+            <a className="mx-2 ft" href='/'>Pre-Order Online</a>
+            <a className="mx-2 ft" href='/'>News</a>
+            <a className="mx-2 ft" href='/'>FAQs</a>
+            <a className="mx-2 ft" href='/'>Terms & Conditions</a>
+            <a className="mx-2 ft" href='/'>Privacy Policy</a>
+            <a className="mx-2 ft" href='/'>Contact Us</a>
+            <a className="ft" href='/' style={{border: 'none'}}>About Us</a>
+            <hr style={{background: '#D8D8D8', marginTop: '1.2rem'}}/>   
+            <p>Donnette BDC Ltd. All Rights Reserved. © 2019</p>  
          </div>
     )
 }

@@ -8,7 +8,7 @@ export default function RateHistory() {
         <div className="mt-4 container">
             <h1 style={{color: '#b2407b', fontWeight: '450'}}>Exchange Rate History</h1>
             <h6 style={{color: '#939393', fontSize: '18px'}}>The exchange rate over a historical period can be determined using the date range selector</h6>
-            <form className="m-auto" style={{border: '1px solid #939393', width: '450px', padding: '10px', borderRadius: '10px'}}>
+            <form className="m-auto" style={{border: '1px solid #939393', maxWidth: '450px', padding: '10px', borderRadius: '10px'}}>
             <h6 style={{fontSize: '14px', color: '#939393'}}>Select a date range</h6>
             <input className="m-2" type="date" id="from" name="from"/>
             <input className="m-2" type="date" id="to" name="to"/>

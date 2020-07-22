@@ -12,13 +12,6 @@ class Landing extends Component{
         toggle: false
     }
     dropdown=()=>{
-            console.log('open')
-        this.setState({
-            toggle: !this.state.toggle
-        })   
-    }
-    closedropdown=()=>{
-        console.log('closed')
         this.setState({
             toggle: !this.state.toggle
         })   
@@ -28,13 +21,13 @@ class Landing extends Component{
 return (
     <div className="">
         <div className="landing">
-        <div className="row mx-5">
-            <div className="my-4">
-                <img src={ikoyi} alt="" className="mx-3 px-4"/>
+        <div className="row l-marg">
+            <div className="col-sm-6">
+                <img src={ikoyi} alt="" className="mx-3 px-4 lad-resize"/>
                 <h4>Our rates beat whatever competition is offering you</h4>
             </div>
-            <div className="">
-                <img src={lad} alt="" className="mx-3 px-4"/>
+            <div className="col-sm-6">
+                <img src={lad} alt="" className="mx-3 px-4 lad-resize"/>
             </div>
         </div> 
         </div>
@@ -45,32 +38,31 @@ return (
                 <p style={{color: '#41a9d4'}}>View Rates History</p>
             </div>
             <div className="col-md-2 col-sm-2">
-                <img src={dol} alt=""/>
+                <img className="img-resize" src={dol} alt=""/>
             </div>
             <div className="col-md-2 col-sm-2">
-                <img src={pon} alt=""/>
+                <img className="img-resize" src={pon} alt=""/>
             </div>
             <div className="col-md-2 col-sm-2">
-                <img src={eur} alt=""/>
+                <img className="img-resize" src={eur} alt=""/>
             </div>
-            <div className="col-md-4 col-sm-2 mt-3" style={{maxWidth: '250px'}}>
+            <div className="col-md-4 col-sm-2 mt-3" style={{maxWidth: '5rem'}}>
                 <div className="row p-3" style={{background: '#B2417B', color: '#fff', borderRadius: '10px'}}>
                     <div className="col-md-6">
                     <img src={cal} alt=""/>
                     </div>
                     <div className="col-md-6">
                     <h6>Currency <br/> Converter</h6>
-                    </div>
-                    
+                    </div>     
                 </div>
                
             </div>
         </div>
         {
         toggle === false ? 
-        <button onClick={()=> this.dropdown()} className="btn py-3" style={{color: '#303030', background: '#c1ffc0', width: '550px', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button> :
+        <button onClick={()=> this.dropdown()} className="btn py-3" style={{color: '#303030', background: '#c1ffc0', maxWidth: '550px', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button> :
         <div style={{background: '#F0F0F0', padding: '10px'}}>
-         <div><img onClick={()=> this.closedropdown()} src={cancel} alt="cancle" style={{cursor: 'pointer'}}/> </div>
+         <div><img onClick={()=> this.dropdown()} src={cancel} alt="cancle" style={{cursor: 'pointer'}}/> </div>
         <div class="page">
         <label class="field a-field a-field_a1">
           <input class="field__input a-field__input" placeholder="Name" required/>
@@ -106,7 +98,7 @@ return (
             </p> 
       </div>
      
-         <button className="btn py-3" style={{color: '#303030', background: '#c1ffc0', width: '550px', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button>
+         <button className="btn py-3" style={{color: '#303030', background: '#c1ffc0', maxWidth: '550px', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button>
          </div>
         }
     </div>
