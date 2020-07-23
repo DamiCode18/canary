@@ -12,6 +12,7 @@
 .l-marg{
   margin-left: 220px;
   margin-right: 300px;
+  padding: 0;
 }
 .img-resize{
   width: 10rem;
@@ -248,23 +249,17 @@
     }
   }
 
-  @media only screen and (max-width: 991){
-    .l-marg{
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-  }
   @media only screen and (max-width: 334px){
     .l-marg{
       margin-left: 0px;
       margin-right: 0px;
     }
     .lad-resize{
-      margin-top: 50px;
+      margin-top: 45px;
       width: 5rem;
     }
     .landing{
-      height: 146px;
+      height: 140px;
     }
     .siz{
       font-size: .4rem;
@@ -279,36 +274,36 @@
       margin-right: 0px;
     }
     .lad-resize{
-      margin-top: 40px;
+      margin-top: 20px;
       width: 8rem;
     }
     .landing{
-      height: 190px;
+      height: 170px;
     }
     .siz{
       font-size: .6rem;
     }
     .wid{
-      width: 10rem;
+      width: 8rem;
     }
   }
   @media only screen and (min-width: 576px) and (max-width: 688px){
     .l-marg{
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 80px;
+      margin-right: 80px;
     }
     .lad-resize{
-      margin-top: 61px;
+      margin-top: 37px;
       width: 10rem;
     }
     .landing{
-      height: 250px;
+      height: 226px;
     }
     .siz{
       font-size: .9rem;
     }
     .wid{
-      width: 12rem;
+      width: 10rem;
     }
   }
   @media only screen and (min-width: 689px) and (max-width: 991px){
@@ -317,11 +312,11 @@
       margin-right: 90px;
     }
     .lad-resize{
-      margin-top: 53px;
+      margin-top: 33px;
       width: 12rem;
     }
     .landing{
-      height: 280px;
+      height: 260px;
     }
     .siz{
       font-size: .9rem;
@@ -369,14 +364,14 @@
       width: 14rem;
     }
   }
-  @media only screen and (min-width: 1601px) and (max-width: 3000px){
+  @media only screen and (min-width: 1601px) {
     .l-marg{
       margin-left: 370px;
       margin-right: 370px;
     }
     .lad-resize{
-      margin-top: 55px;
-      width: 13em;
+      margin-top: 18px;
+      width: 15em;
     }
     .landing{
       height: 301px;
@@ -385,7 +380,7 @@
       font-size: 1.5rem;
     }
     .wid{
-      width: 13rem;
+      width: 15rem;
     }
   }
   

@@ -23,11 +23,11 @@ return (
         <div className="landing">
         <div className="row l-marg">
             <div className="col-sm-6 wid">
-                <img src={ikoyi} alt="" className="mx-3 px-4 lad-resize"/>
+                <img src={ikoyi} alt="" className="lad-resize"/>
                 <h4 className="siz">Our rates beat whatever competition is offering you</h4>
             </div>
             <div className="col-sm-6 wid">
-                <img src={lad} alt="" className="mx-3 px-4 lad-resize"/>
+                <img src={lad} alt="" className="lad-resize"/>
             </div>
         </div> 
         </div>
