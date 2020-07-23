@@ -32,10 +32,10 @@ return (
         </div> 
         </div>
         <div className="grid-it container-fluid mt-3">
-            <div className="item1" style={{textAlign: 'left', marginRight: '-100px'}}>
-                <h5 style={{color: '#939393'}}>Exchange Rate <br/> Today</h5>
-                <h3>15/06/2020</h3>
-                <p style={{color: '#41a9d4'}}>View Rates History</p>
+            <div className="item1">
+                <h5 style={{color: '#939393', textAlign: 'left'}}>Exchange Rate <br/> Today</h5>
+                <h3 style={{textAlign: 'left', color: '#939393'}}>15/06/2020</h3>
+                <p style={{color: '#41a9d4', textAlign: 'left'}}>View Rates History</p>
             </div>
             <div className="item2">
                 <img className="img-resize" src={dol} alt=""/>
@@ -46,8 +46,8 @@ return (
             <div className="item4">
                 <img className="img-resize" src={eur} alt=""/>
             </div>
-            <div className="item5 mt-3" style={{maxWidth: ''}}>
-                <div className="grd p-4" style={{background: '#B2417B', color: '#fff', borderRadius: '10px', width: '10rem'}}>
+            <div className="item5 mt-3">
+                <div className="grd" style={{background: '#B2417B', color: '#fff', borderRadius: '10px', width: '10rem'}}>
                     <div className="item6">
                     <img src={cal} alt=""/>
                     </div>
