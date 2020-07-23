@@ -4,9 +4,9 @@ import img5 from '../Assets/Images/Path.png'
 export default function RateAlert() {
     return (
         <div className="mt-4">
-            <h1 style={{color: '#b2407b', fontWeight: '450'}}>Signup for Rate Alerts</h1>
+            <h1 className="h1-fnt" style={{color: '#b2407b', fontWeight: '450'}}>Signup for Rate Alerts</h1>
             <p>Great personalized Rate Alerts to monitor your currency pairs. Everyday, we will send you an email alert. </p>
-            <div class="input-group mb-3 rounded-lg container" style={{width: '590px'}}>
+            <div class="input-group mb-3 rounded-lg container" style={{maxwidth: '590px'}}>
             <input type="text" class="form-control text-center" placeholder="Enter your email address" aria-label="Recipient's username" aria-describedby="basic-addon2" style={{
                 borderTopLeftRadius: '50px',
                 borderBottomLeftRadius: '50px',

@@ -8,3 +8,34 @@
 tbody{
     color: #5F5F5F;
 }
+.h1-fnt{
+    color: #b2407b;
+    font-weight: 450;
+}
+.h6-fnt{
+    color: #939393;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 480px){
+    .h1-fnt{
+        color: #b2407b;
+        font-size: 24px;
+        font-weight: 450;
+    }
+    .h6-fnt{
+        color: #939393;
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 769px){
+    .h1-fnt{
+        color: #b2407b;
+        font-size: 28px;
+        font-weight: 450;
+    }
+    .h6-fnt{
+        color: #939393;
+        font-size: 16px;
+    }
+}
