@@ -1,0 +1,12 @@
+p{
+    font-size: 12px;
+}
+@media only screen and (max-width: 991px){
+    .hid{
+        display: none;
+    }
+    .n-logo{
+        width: 60px;
+    }
+
+}
