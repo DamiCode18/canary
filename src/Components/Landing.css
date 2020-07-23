@@ -254,3 +254,138 @@
       margin-right: 0px;
     }
   }
+  @media only screen and (max-width: 334px){
+    .l-marg{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .lad-resize{
+      margin-top: 50px;
+      width: 5rem;
+    }
+    .landing{
+      height: 146px;
+    }
+    .siz{
+      font-size: .4rem;
+    }
+    .wid{
+      width: 5rem;
+    }
+  }
+  @media only screen and (min-width: 335px) and (max-width: 575px){
+    .l-marg{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .lad-resize{
+      margin-top: 40px;
+      width: 8rem;
+    }
+    .landing{
+      height: 190px;
+    }
+    .siz{
+      font-size: .6rem;
+    }
+    .wid{
+      width: 10rem;
+    }
+  }
+  @media only screen and (min-width: 576px) and (max-width: 688px){
+    .l-marg{
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    .lad-resize{
+      margin-top: 61px;
+      width: 10rem;
+    }
+    .landing{
+      height: 250px;
+    }
+    .siz{
+      font-size: .9rem;
+    }
+    .wid{
+      width: 12rem;
+    }
+  }
+  @media only screen and (min-width: 689px) and (max-width: 991px){
+    .l-marg{
+      margin-left: 90px;
+      margin-right: 90px;
+    }
+    .lad-resize{
+      margin-top: 53px;
+      width: 12rem;
+    }
+    .landing{
+      height: 280px;
+    }
+    .siz{
+      font-size: .9rem;
+    }
+    .wid{
+      width: 12rem;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1100px){
+    .l-marg{
+      margin-left: 120px;
+      margin-right: 120px;
+    }
+    .lad-resize{
+      margin-top: 36px;
+      width: 14rem;
+    }
+    .landing{
+      height: 301px;
+    }
+    .siz{
+      font-size: 1.2rem;
+    }
+    .wid{
+      width: 14rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1101px) and (max-width: 1600px){
+    .l-marg{
+      margin-left: 270px;
+      margin-right: 270px;
+    }
+    .lad-resize{
+      margin-top: 36px;
+      width: 14rem;
+    }
+    .landing{
+      height: 301px;
+    }
+    .siz{
+      font-size: 1.3rem;
+    }
+    .wid{
+      width: 14rem;
+    }
+  }
+  @media only screen and (min-width: 1601px) and (max-width: 3000px){
+    .l-marg{
+      margin-left: 370px;
+      margin-right: 370px;
+    }
+    .lad-resize{
+      margin-top: 55px;
+      width: 13em;
+    }
+    .landing{
+      height: 301px;
+    }
+    .siz{
+      font-size: 1.5rem;
+    }
+    .wid{
+      width: 13rem;
+    }
+  }
+  
