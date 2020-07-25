@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import './Landing.css'
 import ikoyi from '../Assets/Images/Group 17.png'
 import lad from '../Assets/Images/smilingLady.png'
-import dol from '../Assets/Images/Group.png'
-import pon from '../Assets/Images/Group Copy.png'
-import eur from '../Assets/Images/Group Copy 3.png'
+import dol from '../Assets/Images/Bitmap.png'
+import pon from '../Assets/Images/Bitmap (1).png'
+import eur from '../Assets/Images/Bitmap (2).png'
 import cal from '../Assets/Images/calculator.png'
 import cancel from '../Assets/Images/cancel.png'
 class Landing extends Component{
@@ -38,16 +38,52 @@ return (
                 <p style={{color: '#41a9d4', textAlign: 'left'}}>View Rates History</p>
             </div>
             <div className="item2">
-                <img className="img-resize" src={dol} alt=""/>
+                <div className="img-resize" style={{display: 'flex', paddingLeft: '5px', paddingRight: '5px', paddingTop: '10px', paddingBottom: '10px'}}>
+                    <div>
+                        <h1 style={{color: '#41a9d4'}}>$</h1>
+                        <h6 style={{fontSize: '12px', color: '#ADADAD'}}>US Dollar</h6>
+                    </div>
+                    <img src={dol} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
+                    <div className="">
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦443</h3>
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦450</h3>
+                    </div>
+                </div>
             </div>
             <div className="item3">
-                <img className="img-resize" src={pon} alt=""/>
+                <div className="img-resize" style={{display: 'flex', paddingLeft: '5px', paddingRight: '5px', paddingTop: '10px', paddingBottom: '10px'}}>
+                    <div>
+                        <h1 style={{color: '#41a9d4'}}>£</h1>
+                        <h6 className="mx-2" style={{fontSize: '12px', color: '#ADADAD'}}>Pounds</h6>
+                    </div>
+                    <img src={pon} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
+                    <div className="">
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦535</h3>
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦545</h3>
+                    </div>
+                </div>
             </div>
             <div className="item4">
-                <img className="img-resize" src={eur} alt=""/>
+                <div className="img-resize" style={{display: 'flex', paddingLeft: '5px', paddingRight: '5px', paddingTop: '10px', paddingBottom: '10px'}}>
+                    <div>
+                        <h1 style={{color: '#41a9d4'}}>‎€</h1>
+                        <h6 className="mx-3" style={{fontSize: '12px', color: '#ADADAD'}}>Euro</h6>
+                    </div>
+                    <img src={eur} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
+                    <div className="">
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦443</h3>
+                        <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦450</h3>
+                    </div>
+                </div>
             </div>
             <div className="item5 mt-3">
-                <div className="grd" style={{background: '#B2417B', color: '#fff', borderRadius: '10px', width: '10rem'}}>
+                <div className="grd" style={{background: '#B2417B', color: '#fff', borderRadius: '10px', width: '10rem', height: '6.5rem'}}>
                     <div className="item6">
                     <img src={cal} alt=""/>
                     </div>
