@@ -4,7 +4,7 @@ import './Footer.css'
 import twi from '../Assets/Images/008-twitter.png'
 import ins from '../Assets/Images/029-instagram.png'
 import fab from '../Assets/Images/036-facebook.png'
-import lin from '../Assets/Images/029-instagram.png'
+import lin from '../Assets/Images/027-linkedin.png'
 export default function Footer() {
     return (
         <div className="footer">

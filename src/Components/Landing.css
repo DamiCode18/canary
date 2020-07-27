@@ -16,6 +16,7 @@
 }
 .img-resize{
   width: 10rem;
+  height: 6rem;
 }
 .cal-resize{
   width: 1rem;
@@ -313,7 +314,9 @@
       grid-template-columns: 1fr 2fr;
       padding: 20px;
     }
-    
+    .item1{
+      margin: auto;
+    }
   }
   @media only screen and (min-width: 335px) and (max-width: 575px){
     .l-marg{
@@ -340,6 +343,9 @@
     }
     .w-btn{
       width: 300px;
+    }
+    .item1{
+      margin: auto;
     }
   }
   @media only screen and (min-width: 576px) and (max-width: 688px){
@@ -368,6 +374,7 @@
     .item1{
       grid-column-start: 2;
       grid-column-end: 3;
+      margin: auto;
     }
     .item2{
       grid-column-start: 1;
@@ -420,6 +427,7 @@
     .item1{
       grid-column-start: 3;
       grid-column-end: 3;
+      margin: auto;
     }
     .item2{
       grid-column-start: 1;

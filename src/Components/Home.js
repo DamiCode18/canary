@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="container mt-4">
             <h1 className="h1-fnt">Why you should trade with us</h1>
-            <div className="row container flex mt-4">
+            <div className="row container mt-4">
                 <div className="col-md-6 col-sm-12">
                     <h5 className="my-4">Cash Purchase <br/> Sales Forex</h5>
                     <p className="p-left">You can order cash to buy and sell easily with us at our office anytime during the business hours of the week. Call Donnette BDC for your cash purchase and sales of Forex to discuss and agree rates for immediate payment.</p>

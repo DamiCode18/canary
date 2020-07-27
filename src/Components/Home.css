@@ -14,10 +14,6 @@ h5{
     text-align: right;
     font-size: 18px;
 }
-.flex{
-    display: flex !important;
-    flex-wrap: wrap !important;
-}
 .img-width{
 max-width: 420px;
 }
@@ -34,6 +30,10 @@ max-width: 420px;
         max-width: 30rem;
         text-align: center;
         font-size: 12px;
+    }
+    .flex{
+        flex-wrap: wrap-reverse;
+        flex-direction: row-reverse;
     }
 }
 @media only screen and (min-width: 481px) and (max-width: 600px){
