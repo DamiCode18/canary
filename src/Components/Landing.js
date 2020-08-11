@@ -4,20 +4,39 @@ import ikoyi from '../Assets/Images/Group 17.png'
 import lad from '../Assets/Images/smilingLady.png'
 import dol from '../Assets/Images/Bitmap.png'
 import pon from '../Assets/Images/Bitmap (1).png'
-import eur from '../Assets/Images/Bitmap (2).png'
+// import eur from '../Assets/Images/Bitmap (2).png'
 import cal from '../Assets/Images/calculator.png'
 import cancel from '../Assets/Images/cancel.png'
+import axios from 'axios';
+
 class Landing extends Component{
     state = {
-        toggle: false
+        toggle: false,
+        usd : null,
+        eur : null,
+        gbp: null
     }
     dropdown=()=>{
         this.setState({
             toggle: !this.state.toggle
         })   
     }
+
+    componentDidMount(){
+        axios.get('https://fxrate.staging-cpg.online/api/v1/fx')
+        .then(res => {
+            const data = res.data.data[0]["xchanges"]
+            this.setState({
+                usd: data["usd"],
+                eur: data["eur"],
+                gbp: data["gbp"]
+            })
+        })
+        .catch(err=> console.log(err))
+    }
+
     render(){
-        const {toggle} = this.state
+        const {toggle, usd, eur, gbp} = this.state
 return (
     <div className="">
         <div className="landing">
@@ -46,9 +65,9 @@ return (
                     <img src={dol} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
                     <div className="">
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
-                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦443</h3>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦{usd === null ? null : usd["buy"]}</h3>
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
-                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦450</h3>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦{usd === null ? null : usd["sell"]}</h3>
                     </div>
                 </div>
             </div>
@@ -61,9 +80,9 @@ return (
                     <img src={pon} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
                     <div className="">
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
-                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦535</h3>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦{eur === null ? null : eur["buy"]}</h3>
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
-                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦545</h3>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦{eur === null ? null : eur["sell"]}</h3>
                     </div>
                 </div>
             </div>
@@ -76,9 +95,9 @@ return (
                     <img src={eur} alt="" style={{width: '20px', height: '20px', margin: '5px'}} />
                     <div className="">
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>BUY</h6>
-                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦443</h3>
+                        <h3 style={{fontSize: '20px', color: '#41a9d4'}}>₦{gbp === null ? null : gbp["buy"]}</h3>
                         <h6 style={{fontSize: '9px', color: '#ADADAD', marginBottom: '0px'}}>SELL</h6>
-                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦450</h3>
+                        <h3 style={{fontSize: '20px', color: '#B2417B'}}>₦{gbp === null ? null : gbp["sell"]}</h3>
                     </div>
                 </div>
             </div>

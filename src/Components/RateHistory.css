@@ -2,12 +2,14 @@
     background: #41a9d4;
     color: #fff;
 }
-.paint{
-    background: #E5F7FF;
-}
 tbody{
     color: #5F5F5F;
 }
+
+tr:nth-child(even) {
+    background-color: #E5F7FF;
+}
+
 .h1-fnt{
     color: #b2407b;
     font-weight: 450;
