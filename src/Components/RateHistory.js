@@ -64,39 +64,7 @@ class RateHistory extends React.Component {
                     })
                                         }
                                         </tbody>
-                    {/* <tbody>
-
-                        <tr>
-                            <th scope="row">15 . 06. 2020</th>
-                            <td>₦200000 ₦200000</td>
-                            <td>₦183000 ₦200000</td>
-                            <td>₦10000 ₦200000</td>
-                        </tr>
-                        <tr className="paint">
-                            <th scope="row">15 . 06. 2020</th>
-                            <td>₦200000 ₦200000</td>
-                            <td>₦183000 ₦200000</td>
-                            <td>₦10000 ₦200000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">15 . 06. 2020</th>
-                            <td>₦200000 ₦200000</td>
-                            <td>₦183000 ₦200000</td>
-                            <td>₦10000 ₦200000</td>
-                        </tr>
-                        <tr className="paint">
-                            <th scope="row">15 . 06. 2020</th>
-                            <td>₦200000 ₦200000</td>
-                            <td>₦183000 ₦200000</td>
-                            <td>₦10000 ₦200000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">15 . 06. 2020</th>
-                            <td>₦200000 ₦200000</td>
-                            <td>₦183000 ₦200000</td>
-                            <td>₦10000 ₦200000</td>
-                        </tr>
-                    </tbody> */}
+                
                 </table>
             </div>
         )
