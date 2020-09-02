@@ -7,7 +7,7 @@ import pon from '../Assets/Images/Bitmap (1).png'
 // import eur from '../Assets/Images/Bitmap (2).png'
 import cal from '../Assets/Images/calculator.png'
 import cancel from '../Assets/Images/cancel.png'
-<<<<<<< HEAD
+import axios from 'axios';
 
 function formatDate(date) {
     var d = new Date(date),
@@ -22,9 +22,7 @@ function formatDate(date) {
   
     return [day, month, year].join('-');
   }
-=======
-import axios from 'axios';
->>>>>>> 003545883244960fd2c65b3f8a31ac2b21f1a9e4
+
 
 class Landing extends Component{
     state = {
