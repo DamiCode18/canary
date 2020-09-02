@@ -7,6 +7,21 @@ import pon from '../Assets/Images/Bitmap (1).png'
 import eur from '../Assets/Images/Bitmap (2).png'
 import cal from '../Assets/Images/calculator.png'
 import cancel from '../Assets/Images/cancel.png'
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+  
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+  
+    return [day, month, year].join('-');
+  }
+
 class Landing extends Component{
     state = {
         toggle: false
@@ -34,7 +49,7 @@ return (
         <div className="grid-it container-fluid mt-3">
             <div className="item1">
                 <h5 style={{color: '#939393', textAlign: 'left'}}>Exchange Rate <br/> Today</h5>
-                <h3 style={{textAlign: 'left', color: '#939393'}}>15/06/2020</h3>
+                <h3 style={{textAlign: 'left', color: '#939393'}}>{formatDate(Date.now())}</h3>
                 <p style={{color: '#41a9d4', textAlign: 'left'}}>View Rates History</p>
             </div>
             <div className="item2">
