@@ -26,7 +26,7 @@ export default function Home() {
                     <p className="p-right">Whether you’re travelling abroad as an individual or corporate entity,  you can purchase foreign exchange for a business trip or holidays. We are authorized by the Central bank of Nigeria as a BDC for the sale of Business Travel Allowance (BTA) and Personal Travel Allowance (PTA).</p>
                 </div>
             </div>
-            <div className="row mt-4">
+            <div className="row flex mt-4">
                 <div className="col-md-6 col-sm-12">
                     <h5 className="my-4">Credit Card Payments</h5>
                     <p className="p-left">We bring you the convenience of making payments on your terms. Choose our credit card payment services, all designed to accommodate your hectic lifestyle.</p>
