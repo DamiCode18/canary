@@ -57,7 +57,6 @@ class RateHistory extends React.Component {
     }
     render() {
         const { xchangeData } = this.state
-        console.log(xchangeData)
         return (
             <div className="mt-4 container">
                 <h1 className="h1-fnt">Exchange Rate History</h1>

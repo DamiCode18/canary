@@ -10,7 +10,8 @@ import cancel from '../Assets/Images/cancel.png'
 import swal from 'sweetalert'
 // import $ from 'jquery'
 import axios from 'axios';
-import CurrencyConverter from '../Components/currencyConverter'
+import CurrencyConverter from '../Components/currencyConverter';
+import './index.css'
 
 function formatDate(date) {
     var d = new Date(date),
