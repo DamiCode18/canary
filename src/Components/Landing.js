@@ -7,6 +7,7 @@ import pon from '../Assets/Images/Bitmap (1).png'
 import eurlogo from '../Assets/Images/Bitmap (2).png'
 import cal from '../Assets/Images/calculator.png'
 import cancel from '../Assets/Images/cancel.png'
+import swal from 'sweetalert'
 // import $ from 'jquery'
 import axios from 'axios';
 import CurrencyConverter from '../Components/currencyConverter'
@@ -40,7 +41,13 @@ class Landing extends Component{
         to: null,
         amount: null,
         converted: null, 
-        result: null
+        result: null,
+        amount: null,
+        name: null,
+        phone: null,
+        activity: null,
+        currency: null,
+        email: null
     }
     dropdown=()=>{
         this.setState({
@@ -53,6 +60,11 @@ class Landing extends Component{
     //     })
        
     // }
+    onChange=(e)=>{
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
     calc=(e)=>{
         
         this.setState({
@@ -85,6 +97,25 @@ class Landing extends Component{
             })
         })
         .catch(err=> console.log(err))
+    }
+
+    onSubmit=(e)=>{
+        e.preventDefault();
+        const userData = {
+            amount: this.state.amount,
+            phone: this.state.phone,
+            currency: this.state.currency,
+            name: this.state.name,
+            email: this.state.email,
+            activity: this.state.activity
+        }
+        axios.post('https://kyc-service.staging-cpg.online/preorder', userData)
+        .then(res=>{
+            swal('Congrats!', 'Your Pre-order request is received and a customer representative will reach your shortly', 'success');
+        })
+        .catch(err=>{
+           swal('OH NO!', 'Pre-order request failed, Try again!', 'error');
+        })
     }
 
     render(){
@@ -174,7 +205,7 @@ return (
                     </button>
                 </div>
                 <div class="modal-body">
-                    {/* <CurrencyConverter/> */}
+                    <CurrencyConverter/>
                     {/* <div style={{display: 'flex'}}>
                         <div className="ml-2">
                             <label className="text-left">Amount</label>
@@ -209,29 +240,30 @@ return (
         toggle === false ? 
         <button onClick={()=> this.dropdown()} className="w-btn btn py-3 mt-4" style={{color: '#303030', background: '#c1ffc0', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button> :
         <div style={{background: '#F0F0F0', padding: '10px'}}>
-        <form>
+        <form onSubmit={this.onSubmit}>
          <div><img onClick={()=> this.dropdown()} src={cancel} alt="cancle" style={{cursor: 'pointer'}}/> </div>
         <div class="page">
         <label class="field a-field a-field_a1">
-          <input class="field__input a-field__input" type="text" placeholder="Name" required/>
+          <input class="field__input a-field__input" type="text" placeholder="Name" required name="name" value={this.state.name} onChange={this.onChange}/>
           <span class="a-field__label-wrap">
             <span class="a-field__label">Name</span>
           </span>
         </label>
         <label class="field a-field a-field_a2">
-          <input class="field__input a-field__input" type="number" placeholder="Phone no" required/>
+          <input class="field__input a-field__input" type="number" placeholder="Phone no" required name="phone" value={this.state.phone} onChange={this.onChange}/>
           <span class="a-field__label-wrap">
             <span class="a-field__label">Phone no</span>
           </span>
         </label>    
         <label class="field a-field a-field_a2">
-          <input class="field__input a-field__input" type="email" placeholder="Email Address" required/>
+          <input class="field__input a-field__input" type="email" placeholder="Email Address" required name="email" value={this.state.email} onChange={this.onChange}/>
           <span class="a-field__label-wrap">
             <span class="a-field__label">Email Address</span>
           </span>
         </label>
         <p style={{fontSize: '15px'}}>I am <span> <label class="field a-field a-field_a2">
-            <select className="field__input a-field__input" required style={{width: '12rem'}}>
+            <select className="field__input a-field__input" required style={{width: '12rem'}} name="activity" value={this.state.activity} onChange={this.onChange}>
+                <option>choose</option>
                 <option>Selling</option>
                 <option>Buying</option>
             </select>
@@ -242,12 +274,13 @@ return (
             </p> 
             <p><span> <label class="field a-field a-field_a2">
             <div style={{display: 'flex'}}>
-            <select className="form-control field__input a-field__input" required style={{width: '4rem'}}>
+            <select className="form-control field__input a-field__input" required style={{width: '7rem'}} name="currency" value={this.state.currency} onChange={this.onChange}>
+                <option>choose</option>
                 <option>$</option>
                 <option>€</option>
                 <option>£</option>
             </select>
-             <input class="field__input a-field__input" type="number" required/>
+             <input class="field__input a-field__input" type="number" required name="amount" value={this.state.amount} onChange={this.onChange}/>
             </div>
             <span class="a-field__label-wrap">
           </span>
