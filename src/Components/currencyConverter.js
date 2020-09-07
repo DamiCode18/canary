@@ -58,7 +58,7 @@ import exchange from '../Assets/Images/exchange.svg'
     }
     
     getConvertedCurrency(baseAmount,convertToCurrency,rates) {
-        return Number.parseFloat(baseAmount * rates[convertToCurrency]).toFixed(3);
+        return Number.parseFloat(baseAmount * rates[convertToCurrency]).toFixed(2);
     }
     
     render() {
