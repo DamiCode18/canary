@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import usdlogo from '../Assets/Images/Bitmap.png'
+import gbplogo from '../Assets/Images/Bitmap (1).png'
 import eurlogo from '../Assets/Images/Bitmap (2).png'
-import exchange from '../Assets/Images/exchange.svg';
+import nigerlogo from '../Assets/Images/niger.png'
+import exchange from '../Assets/Images/opposite.svg';
 import calculator from '../Assets/Images/calculator.png';
 import './index.css'
 class CurrencyConverter extends Component {
@@ -83,17 +86,17 @@ class CurrencyConverter extends Component {
   changeSellConvertToCurrency(e) {
     if (e.target.value === "USD") {
       this.setState({
-        currency1: { "symbol": e.target.value, "description": "US DOLLARS" }
+        currency2: { "symbol": e.target.value, "description": "US DOLLARS" }
       })
     }
     else if (e.target.value === "EUR") {
       this.setState({
-        currency1: { "symbol": e.target.value, "description": "EUROS" }
+        currency2: { "symbol": e.target.value, "description": "EUROS" }
       })
     }
     else {
       this.setState({
-        currency1: { "symbol": e.target.value, "description": "POUNDS" }
+        currency2: { "symbol": e.target.value, "description": "POUNDS" }
       })
     }
   }
@@ -115,9 +118,8 @@ class CurrencyConverter extends Component {
   }
 
   flip = (y) => {
-    this.setState({ status: y,
-    currency2: {"symbol": "NGN", "description": "NIGERIAN NGN"},
-    currency1: { "symbol": "USD", "description": "US DOLLARS" }
+    this.setState({ 
+      status: y
    })
   }
 
@@ -134,66 +136,71 @@ class CurrencyConverter extends Component {
     return (
       <div className="converter-container">
         <div style={{ display: 'flex', justifyContent: "space-between" }}>
-
-          <div className="text-left">
+          <div className="text-left mt-4">
             <label>Amount</label>
             <input type='number'
               id='base-amount'
               defaultValue={baseAmount}
               onChange={this.changeBaseAmount} name="amount" className="form-control border-line" placeholder="amount" type="number" style={{ width: '50%' }} />
           </div>
-          {status === "sell" ? <div display="flex">
-            <div className="ml-2" style={{ display: "flex" }}>
+          {status === "sell" ? 
+          <div>
+          <div> <h6><b>Selling Conversion Rate</b></h6> </div>
+          <div style={{display: "flex"}}>
+            <div className="ml-2" style={{ display: "" }}>
               <label className="text-left">From </label>
-              <div style={{ display: 'flex', border: '1px solid black', padding: '2%' }}>
-                <div style={{ borderRadius: '50%' }}>
-                  <img src={eurlogo} alt='logo' />
-                </div>
-                <div>
-                  <h2>{this.state.currency1.symbol}</h2>
-                  <h5>{this.state.currency1.description}</h5>
-                </div>
-
-              </div>
-              {/* <select name="from" className="form-control" onChange={this.changeBaseCurrency} type="text" value={baseCurrency} placeholder="from">
-                          
-                                <option>USD</option>
-                                <option>GBP</option>
-                                <option>EUR</option>
-                            </select> */}
-            </div>
-
-            <div className="m-auto">
-              {/* <img src={exchange} alt="" style={{ width: '65px', height: '45px' }} onClick={this.flip("sell")} /> */}
-              <button onClick={() => this.flip("buy")}>Flip</button>
-            </div>
-
-            <div className="ml-2">
-              <label className="text-left">To </label>
-              <div style={{ display: 'flex', border: '1px solid black', padding: '2%' }}>
-                <div style={{ borderRadius: '50%' }}>
-                  <img src={eurlogo} alt='logo' />
-                </div>
-              </div>
-              <select name="to" className="form-control" onChange={this.changeConvertToCurrency} type="text" value={convertToCurrency} placeholder="to">
+              <div style={{ display: 'flex', padding: '2%', width: '150px'}}>
+                {
+                  this.state.currency2.symbol === "USD" ?
+                  <img src={usdlogo} alt='logo' /> :
+                  this.state.currency2.symbol === "GBP" ?
+                  <img src={gbplogo} alt='logo' /> :
+                  this.state.currency2.symbol === "EUR" ?
+                  <img src={eurlogo} alt='logo' /> : null
+                }
+                  <select name="to" className="form-control" onChange={this.changeConvertToCurrency} type="text" value={convertToCurrency} placeholder="to">
                 {/* {currencyChoice} */}
                 <option>USD</option>
                 <option>GBP</option>
                 <option>EUR</option>
               </select>
+              </div>
+            </div>
+            <div className="mx-3 mt-4">
+                  <img src={exchange} alt="" style={{ width: '35px', height: '35px', cursor: 'pointer' }} onClick={() => this.flip("buy")}/>
+                  {/* <button onClick={this.flip("sell")}>Flip</button> */}
+                </div>
+            {/* <div className="m-auto">
+              <img src={exchange} alt="" style={{ width: '65px', height: '45px' }} onClick={this.flip("sell")} />
+              <button onClick={() => this.flip("buy")} className="btn btn-info m-auto">Flip</button>
+            </div> */}
+
+            <div className="ml-2">
+              <label className="text-left">To </label>
+              <div style={{ display: 'flex', border: '1px solid black', padding: '2%', width: '150px'}} className="form-control">
+                <div style={{ borderRadius: '50%' }}>
+                  <img src={nigerlogo} alt='logo' style={{width: '25px', height: '25px'}} />
+                </div>
+                <h6 className="m-auto" style={{fontSize: ''}} >{this.state.currency1.symbol}</h6>
+              </div>
             </div>
           </div>
+          </div>
             : status === "buy" ?
-            <div >
-              <div className="ml-2" style={{ display: "flex" }}>
+            <div>
+            <div> <h6><b>Buying Conversion Rate</b></h6> </div>
+            <div style={{display: "flex"}}>
+              <div className="ml-2" style={{ display: "" }}>
                 <label className="text-left">From </label>
-                <div className="ml-2">
-                  <label className="text-left">To </label>
-                  <div style={{ display: 'flex', border: '1px solid black', padding: '2%' }}>
-                    <div style={{ borderRadius: '50%' }}>
-                      <img src={eurlogo} alt='logo' />
-                    </div>
-                  </div>
+                <div style={{ display: 'flex', padding: '2%', width: '150px'}}>
+                {
+                  this.state.currency2.symbol === "USD" ?
+                  <img src={usdlogo} alt='logo' /> :
+                  this.state.currency2.symbol === "GBP" ?
+                  <img src={gbplogo} alt='logo' /> :
+                  this.state.currency2.symbol === "EUR" ?
+                  <img src={eurlogo} alt='logo' /> : null
+                }
                   <select name="to" className="form-control" onChange={this.changeSellConvertToCurrency} type="text" value={convertToCurrency} placeholder="to">
                     {/* {currencyChoice} */}
                     <option>USD</option>
@@ -201,65 +208,81 @@ class CurrencyConverter extends Component {
                     <option>EUR</option>
                   </select>
                 </div>
+              </div>
 
-
-                <div className="m-auto">
-                  <img src={exchange} alt="" style={{ width: '65px', height: '45px' }} onClick={() => this.flip("sell")}/>
+                <div className="mx-3 mt-4">
+                  <img src={exchange} alt="" style={{ width: '35px', height: '35px', cursor: 'pointer' }} onClick={() => this.flip("sell")}/>
                   {/* <button onClick={this.flip("sell")}>Flip</button> */}
                 </div>
 
-                <div style={{ display: 'flex', border: '1px solid black', padding: '2%' }}>
-                  <div style={{ borderRadius: '50%' }}>
-                    <img src={eurlogo} alt='logo' />
-                  </div>
-                  <div>
-                    <h2>{this.state.currency2.symbol}</h2>
-                    <h5>{this.state.currency2.description}</h5>
-                  </div>
-
+                <div className="ml-2">
+              <label className="text-left">To </label>
+              <div style={{ display: 'flex', border: '1px solid black', padding: '2%', width: '150px'}} className="form-control">
+                <div style={{ borderRadius: '50%' }}>
+                  <img src={nigerlogo} alt='logo' style={{width: '25px', height: '25px'}} />
                 </div>
-                {/* <select name="from" className="form-control" onChange={this.changeBaseCurrency} type="text" value={baseCurrency} placeholder="from">
-                          
-                                <option>USD</option>
-                                <option>GBP</option>
-                                <option>EUR</option>
-                            </select> */}
+                <h6 className="m-auto" style={{fontSize: ''}} >{this.state.currency1.symbol}</h6>
               </div>
-
+            </div>
             </div> 
+            </div>
             : null
           }
 
-          <div className="m-auto">
+          <div className="mx-auto" style={{marginTop: '55px'}}>
             <img src={calculator} alt="calcultors"  style={{background: 'rgb(178, 65, 123)'}}/>
           </div>
 
         </div>
         <div>
-          {currency1.symbol === "NGN" ?
+          {this.state.status === "buy" ?
             <div>
               {currency2.symbol === "USD" ?
                 <div>
-                  {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(usd.buy, baseAmount)}</p>}
+                  {usd === null ? null : 
+                  <div className="mt-3">
+                  <h3 style={{color: '#B2417B'}}>${baseAmount} is equal to</h3> 
+                  <h3 style={{color: '#41a9d4'}}>₦{this.getRate(usd.buy, baseAmount)}</h3>
+                  </div>}
                 </div> : currency2.symbol === "EUR" ?
                   <div>
-                    {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(eur.buy, baseAmount)}</p>}
+                    {usd === null ? null : 
+                    <div className="mt-3">
+                    <h3 style={{color: '#B2417B'}}>€{baseAmount} is equal to</h3> 
+                    <h3 style={{color: '#41a9d4'}}>₦{this.getRate(eur.buy, baseAmount)}</h3> 
+                    </div>}
                   </div> : currency2.symbol === "GBP" ?
                     <div>
-                      {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(gbp.buy, baseAmount)}</p>}
+                      {usd === null ? null : 
+                      <div className="mt-3">
+                      <h3 style={{color: '#B2417B'}}>£{baseAmount} is equal to</h3> 
+                      <h3 style={{color: '#41a9d4'}}>₦{this.getRate(gbp.buy, baseAmount)}</h3>
+                      </div>}
                     </div> : null}
             </div> :
-            currency2.symbol === "NGN" ?
+            this.state.status === "sell" ?
               <div>
-                {currency1.symbol === "USD" ?
+                {currency2.symbol === "USD" ?
                   <div>
-                    {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(usd.sell, baseAmount)}</p>}
-                  </div> : currency1.symbol === "EUR" ?
+                    {usd === null ? null : 
+                    <div className="mt-3">
+                    <h3 style={{color: '#B2417B'}}>${baseAmount} is equal to</h3> 
+                    <h3 style={{color: '#41a9d4'}}> ₦{this.getRate(usd.sell, baseAmount)}</h3>
+                    </div>}
+                  </div> : currency2.symbol === "EUR" ?
                     <div>
-                      {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(eur.sell, baseAmount)}</p>}
-                    </div> : currency1.symbol === "GBP" ?
+                      {usd === null ? null : 
+                      <div className="mt-3">
+                      <h3 style={{color: '#B2417B'}}>€{baseAmount} is equal to</h3> 
+                      <h3 style={{color: '#41a9d4'}}>₦{this.getRate(eur.sell, baseAmount)}</h3>
+                      </div>}
+                    </div> : currency2.symbol === "GBP" ?
                       <div>
-                        {usd === null ? null : <p>{baseAmount} is equal to {this.getRate(gbp.sell, baseAmount)}</p>}
+                        {usd === null ? null : 
+                        <div className="mt-3">
+                        <h3 style={{color: '#B2417B'}}>£{baseAmount} is equal to</h3> 
+                        <h3 style={{color: '#41a9d4'}}>₦{this.getRate(gbp.sell, baseAmount)}</h3>
+                        </div>}
                       </div> : null}
               </div>
               : null
