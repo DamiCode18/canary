@@ -13,16 +13,16 @@ export default function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto" sty>
                     <li class="nav-item active">
-                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="/">Rate Alerts <span class="sr-only">(current)</span></a>
+                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="#rate-alert">Rate Alerts <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="/">Our Services</a>
+                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="#why-trade-with-us">Our Services</a>
                     </li>
                     <li class="nav-item">
-                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="/">Contact Us</a>
+                        <a style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3" href="#contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn" href="/" style={{color: '#fff', background: '#41A9D4', fontSize: '18px', fontWeight: '490'}}>Pre-Order Forex</a>
+                        <a class="btn" href="#pre-order" style={{color: '#fff', background: '#41A9D4', fontSize: '18px', fontWeight: '490'}}>Pre-Order Forex</a>
                     </li>
                     </ul>
                 </div>

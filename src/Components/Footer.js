@@ -7,7 +7,7 @@ import fab from '../Assets/Images/036-facebook.png'
 import lin from '../Assets/Images/027-linkedin.png'
 export default function Footer() {
     return (
-        <div className="footer">
+        <div className="footer" id="contact-us">
             <img src={logo} alt="logo" className="f-logo"/>
             <h6 className="mt-4 mb-2 f-h6">186, Awolowo Road, Ikoyi - Lagos</h6>
             <h4 className="f-h4">08164930252 | 08142703957</h4>

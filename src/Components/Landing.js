@@ -122,7 +122,7 @@ class Landing extends Component{
     render(){
         const {toggle, usd, eur, gbp} = this.state
 return (
-    <div className="">
+    <div id="">
         <div className="landing">
         <div className="row l-marg">
             <div className="col-sm-6 wid">
@@ -239,8 +239,11 @@ return (
         </div>
         {
         toggle === false ? 
-        <button onClick={()=> this.dropdown()} className="w-btn btn py-3 mt-4" style={{color: '#303030', background: '#c1ffc0', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button> :
-        <div style={{background: '#F0F0F0', padding: '10px'}}>
+        <div id="pre-order">
+        <button onClick={()=> this.dropdown()} className="w-btn btn py-3 mt-4" style={{color: '#303030', background: '#c1ffc0', borderRadius: '50px'}}><h3>Pre-Order FOREX</h3></button> 
+        </div>
+        :
+        <div style={{background: '#F0F0F0', padding: '10px'}} id="pre-order">
         <form onSubmit={this.onSubmit}>
          <div><img onClick={()=> this.dropdown()} src={cancel} alt="cancle" style={{cursor: 'pointer'}}/> </div>
         <div class="page">

@@ -3,7 +3,7 @@ import img5 from '../Assets/Images/Path.png'
 // import line from '../Assets/Images/Rectangle.png'
 export default function RateAlert() {
     return (
-        <div className="mt-4">
+        <div className="mt-4" id="rate-alert">
             <h1 className="h1-fnt" style={{color: '#b2407b', fontWeight: '450'}}>Signup for Rate Alerts</h1>
             <p>Great personalized Rate Alerts to monitor your currency pairs. Everyday, we will send you an email alert. </p>
             <div class="input-group mb-3 rounded-lg container" style={{maxwidth: '590px'}}>

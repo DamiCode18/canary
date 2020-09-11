@@ -6,7 +6,7 @@ import img4 from '../Assets/Images/5869.png'
 import './Home.css'
 export default function Home() {
     return (
-        <div className="container mt-4">
+        <div className="container mt-4" id="why-trade-with-us">
             <h1 className="h1-fnt">Why you should trade with us</h1>
             <div className="row container mt-4">
                 <div className="col-md-6 col-sm-12">

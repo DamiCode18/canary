@@ -134,7 +134,7 @@ class CurrencyConverter extends Component {
     console.log(this.state)
 
     return (
-      <div className="converter-container">
+      <div className="converter-container" style={{width: '700px'}}>
         <div style={{ display: 'flex', justifyContent: "space-between" }}>
           <div className="text-left mt-4">
             <label>Amount</label>
