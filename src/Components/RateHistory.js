@@ -21,14 +21,14 @@ function formatDate(date) {
 class RateHistory extends React.Component {
     state = {
         xchangeData: null,
-        start_date: null,
-        end_date: null
+        start_date: formatDate(Date.now()),
+        end_date: formatDate(Date.now())
     }
     onChange=(e)=>{
         this.setState({
             [e.target.name]: e.target.value
         })
-        this.date_range()
+        this.date_range(this.state.start_date, this.state.end_date)
     }
     componentDidMount() {
         axios.get('https://fxrate.staging-cpg.online/api/v1/fx?limit=5')
@@ -45,8 +45,8 @@ class RateHistory extends React.Component {
         return new Date(date)
     }
     
-    date_range=()=>{
-        axios.get(`https://fxrate.staging-cpg.online/api/v1/fx/all?limit=5&start_date=${this.state.start_date}&end_date=${this.state.end_date}`)
+    date_range=(x,y)=>{
+        axios.get(`https://fxrate.staging-cpg.online/api/v1/fx/all?limit=5&start_date=${x}&end_date=${y}`)
         .then(res => {
             const data = res.data.data
             this.setState({
@@ -56,7 +56,7 @@ class RateHistory extends React.Component {
         .catch(err => console.log(err))
     }
     render() {
-        const { xchangeData } = this.state
+        const { xchangeData, start_date, end_date } = this.state
         return (
             <div className="mt-4 container">
                 <h1 className="h1-fnt">Exchange Rate History</h1>
@@ -64,8 +64,8 @@ class RateHistory extends React.Component {
                 <form className="m-auto" style={{ border: '1px solid #939393', maxWidth: '450px', padding: '10px', borderRadius: '10px' }}>
                     <h6 style={{ fontSize: '14px', color: '#939393' }}>Select a date range</h6>
                     <div style={{display: 'flex'}}>
-                    <input className="m-2 form-control" type="date" name="start_date" value={this.state.start_date} onChange={this.onChange} placeholder="2020-08-08"/>
-                    <input className="m-2 form-control" type="date" name="end_date" value={this.state.end_date} onChange={this.onChange} placeholder="2020-08-19"/>
+                    <input className="m-2 form-control" type="date" name="start_date" value={start_date} onChange={this.onChange} placeholder="2020-08-08"/>
+                    <input className="m-2 form-control" type="date" name="end_date" value={end_date} onChange={this.onChange} placeholder="2020-08-19"/>
                     </div>
                 </form>
                 <table class="table mt-4">
