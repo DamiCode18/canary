@@ -125,11 +125,22 @@ return (
     <div id="">
         <div className="landing">
         <div className="row l-marg">
-            <div className="col-sm-6 wid">
-                <img src={ikoyi} alt="" className="lad-resize"/>
+            <div className="col-6 p-down">
+                {/* <img src={ikoyi} alt="" className="lad-resize"/> */}
+                <div className="row">
+                    <div>
+                        <h3 className="mst" style={{color: '#fff', fontSize: '2.3rem', marginTop: '1.5rem', textAlign: 'right'}}>Most</h3>
+                        <h3 className="trt" style={{color: '#fff', fontSize: '2.3rem', marginTop: '-1rem', textAlign: 'right'}}>Trusted</h3>
+                    </div>
+                    <div>
+                        <h1 className="bdc" style={{fontSize: '8rem', color: '#fff'}}>BDC</h1>
+                    </div>
+                    <br/>
+                    <h2 className="brt" style={{color: '#fff'}}>offering the best rate</h2>
+                </div>    
                 <h4 className="siz">Our rates beat whatever competition is offering you</h4>
             </div>
-            <div className="col-sm-6 wid">
+            <div className="col-6 wid">
                 <img src={lad} alt="" className="lad-resize"/>
             </div>
         </div> 
