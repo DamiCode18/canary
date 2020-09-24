@@ -2,6 +2,16 @@
     background: #41a9d4;
     color: #fff;
 }
+.table thead th {
+    border-bottom: none !important;
+}
+.table td, .table th{
+    border-top: none !important;
+}
+.bg2{
+    background: #207599;
+    color: #fff;
+}
 tbody{
     color: #5F5F5F;
 }

@@ -71,10 +71,18 @@ class RateHistory extends React.Component {
                 <table class="table mt-4">
                     <thead className="thead bg">
                         <tr>
-                            <th scope="col" style={{ background: '#fff' }}></th>
-                            <th scope="col"><img src={dol} alt="" className="mx-2" />US Dollar</th>
-                            <th scope="col"><img src={pon} alt="" className="mx-2" />Pounds Sterling</th>
-                            <th scope="col"><img src={eur} alt="" className="mx-2" />Euro</th>
+                            <th scope="col" style={{ background: '#fff', border: 'none', padding: '1.3rem'}}></th>
+                            <th scope="col" style={{padding: '1.3rem'}}><img src={dol} alt="" className="mx-2" />US Dollar</th>
+                            <th scope="col" style={{padding: '1.3rem'}}><img src={pon} alt="" className="mx-2" />Pounds Sterling</th>
+                            <th scope="col" style={{padding: '1.3rem'}}><img src={eur} alt="" className="mx-2" />Euro</th>
+                        </tr>
+                        <tr>
+                        {/* <div style={{display:'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr' }}> */}
+                        <th scope="col" style={{ background: '#fff', border: 'none'}} className="mt-2"></th>
+                        <th scope="col" className="mt-2 bg2"><span className="mx-2">Buy</span> Sell</th>
+                        <th scope="col" className="mt-2 bg2"><span className="mx-2">Buy</span> Sell</th>
+                        <th scope="col" className="mt-2 bg2"><span className="mx-2">Buy</span> Sell</th>
+                        {/* </div> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -84,9 +92,9 @@ class RateHistory extends React.Component {
                            
                                 <tr key={data.id}>
                                     <th scope="row">{formatDate(this.get_date(data.created_at))}</th>
-                                    <td>₦{data.xchanges["usd"]["buy"]} ₦{data.xchanges["usd"]["sell"]}</td>
-                                    <td>₦{data.xchanges["gbp"]["buy"]} ₦{data.xchanges["gbp"]["sell"]}</td>
-                                    <td>₦{data.xchanges["eur"]["buy"]} ₦{data.xchanges["eur"]["sell"]}</td>
+                                    <td><span className="mx-2">₦{data.xchanges["usd"]["buy"]}</span> ₦{data.xchanges["usd"]["sell"]}</td>
+                                    <td><span className="mx-2">₦{data.xchanges["gbp"]["buy"]}</span> ₦{data.xchanges["gbp"]["sell"]}</td>
+                                    <td><span className="mx-2">₦{data.xchanges["eur"]["buy"]}</span> ₦{data.xchanges["eur"]["sell"]}</td>
 
                                 </tr>
                           
