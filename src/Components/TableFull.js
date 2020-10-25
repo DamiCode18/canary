@@ -4,8 +4,6 @@ import dol from '../Assets/Images/Bitmap.png';
 import pon from '../Assets/Images/Bitmap (1).png';
 import eur from '../Assets/Images/Bitmap (2).png';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
-
 
 function formatDate(date) {
 	var d = new Date(date),
@@ -18,7 +16,7 @@ function formatDate(date) {
 
 	return [ year, month, day ].join('-');
 }
-class RateHistory extends React.Component {
+class TableFull extends React.Component {
 	state = {
 		xchangeData: null,
 		start_date: formatDate(Date.now()),
@@ -32,7 +30,7 @@ class RateHistory extends React.Component {
 	};
 	componentDidMount() {
 		axios
-			.get('https://fxrate.staging-cpg.online/api/v1/fx?limit=5')
+			.get('https://fxrate.staging-cpg.online/api/v1/fx?limit=365')
 			.then((res) => {
 				const data = res.data.data;
 				this.setState({
@@ -72,7 +70,7 @@ class RateHistory extends React.Component {
 					<h6 style={{ fontSize: '14px', color: '#939393' }}>Select a date range</h6>
 					<div style={{ display: 'flex' }}>
 						<input
-							className="m-2 form-control ovf"
+							className="m-2 form-control"
 							type="date"
 							name="start_date"
 							value={start_date}
@@ -80,7 +78,7 @@ class RateHistory extends React.Component {
 							placeholder="2020-08-08"
 						/>
 						<input
-							className="m-2 form-control ovf"
+							className="m-2 form-control"
 							type="date"
 							name="end_date"
 							value={end_date}
@@ -89,7 +87,8 @@ class RateHistory extends React.Component {
 						/>
 					</div>
 				</form>
-				<table class="table mt-4">
+                <div style={{overflowY: 'scroll'}}>
+                <table class="table mt-4">
 					<thead className="thead bg">
 						<tr>
 							<th scope="col" style={{ background: '#fff', border: 'none', padding: '1.3rem' }} />
@@ -139,10 +138,11 @@ class RateHistory extends React.Component {
 						)}
 					</tbody>
 				</table>
-                <Link to="/full" type="btn btn-info">View full table</Link>
+                </div>
+				
 			</div>
 		);
 	}
 }
 
-export default RateHistory;
+export default TableFull;
