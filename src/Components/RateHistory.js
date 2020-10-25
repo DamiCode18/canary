@@ -72,7 +72,7 @@ class RateHistory extends React.Component {
 					<h6 style={{ fontSize: '14px', color: '#939393' }}>Select a date range</h6>
 					<div style={{ display: 'flex' }}>
 						<input
-							className="m-2 form-control ovf"
+							className="m-2 form-control"
 							type="date"
 							name="start_date"
 							value={start_date}
@@ -80,7 +80,7 @@ class RateHistory extends React.Component {
 							placeholder="2020-08-08"
 						/>
 						<input
-							className="m-2 form-control ovf"
+							className="m-2 form-control"
 							type="date"
 							name="end_date"
 							value={end_date}
@@ -139,7 +139,7 @@ class RateHistory extends React.Component {
 						)}
 					</tbody>
 				</table>
-                <Link to="/full" type="btn btn-info">View full table</Link>
+                <Link to="/full" className="btn btn-lg" style={{background: '#207599', color: '#fff', borderRadius: '0'}}>View All</Link>
 			</div>
 		);
 	}
