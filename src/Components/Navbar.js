@@ -14,7 +14,7 @@ export default function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto" sty>
                     <li class="nav-item active">
-                        <Link to="/news" style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3">News <span class="sr-only">(current)</span></Link>
+                        <a href="/#news" style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3">News <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <Link to="/faqs" style={{color: '#41A9D4', fontSize: '18px', fontWeight: '490'}} class="nav-link mx-3">FAQs</Link>

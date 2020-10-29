@@ -1,0 +1,19 @@
+.des{
+    box-shadow: 6px 8px 6px 8px;
+    height: 15rem;
+    width: 75vw;
+    background: #217599;
+    color: #fff;
+    padding: 2rem;
+}
+@media only screen and (max-width: 1220px) and (min-width: 768px) {
+    .des{
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 300px) {
+    .des{
+        height: fit-content;
+    }
+}

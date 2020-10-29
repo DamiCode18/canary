@@ -5,6 +5,7 @@ import RateAlert from './RateAlert';
 import RateHistory from './RateHistory';
 import Landing from './Landing';
 import Map from './Map';
+import NewsView from './NewsView';
 
 
 class HomeView extends Component {
@@ -20,6 +21,7 @@ class HomeView extends Component {
             <div>
 					<Landing />
 					<RateHistory />
+					<NewsView/>
 					<Home />
 					<Map source={this.state.src} />
 					<RateAlert />

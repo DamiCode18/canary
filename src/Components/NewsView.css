@@ -1,0 +1,15 @@
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.clr{
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px){
+    .hide{
+        display: none;
+    }
+}
