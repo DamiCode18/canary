@@ -18,7 +18,6 @@ export default function RateAlert() {
                 borderBottomRightRadius: '50px'}}>
                 <span class="input-group-text" id="basic-addon2" style={{borderTopRightRadius: '50px',
                 borderBottomRightRadius: '50px',
-                borderTopRightRadius: '50px',
                 background: 'white',
                 borderLeft: 'none',
                 outlineColor: '#fff'}}><img src={img5} alt=""/></span>

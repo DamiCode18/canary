@@ -38,7 +38,7 @@ export default class News extends Component {
                          <p style={{color: '#fff', fontSize: '1rem'}} className="text-left">Posted on: {formatDate(item.date_posted)}</p>
                          <h4>{item.title}</h4>
                          <h6>{item.description}</h6>
-                         <button className="btn btn-md" style={{color: ' #217599', background: '#fff', borderRadius: '0'}}><a href={item.url} target="_blank">Read more...</a></button>
+                         <button className="btn btn-md" style={{color: ' #217599', background: '#fff', borderRadius: '0'}}><a href={item.url} target="_blank" rel="noopener noreferrer">Read more...</a></button>
                     </div>
                  ))   
                 }

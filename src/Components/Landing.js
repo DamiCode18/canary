@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './Landing.css'
-import ikoyi from '../Assets/Images/Group 17.png'
 import lad from '../Assets/Images/smilingLady.png'
 import dol from '../Assets/Images/Bitmap.png'
 import pon from '../Assets/Images/Bitmap (1).png'
@@ -43,7 +42,6 @@ class Landing extends Component{
         amount: null,
         converted: null, 
         result: null,
-        amount: null,
         name: null,
         phone: null,
         activity: null,
@@ -75,13 +73,13 @@ class Landing extends Component{
         //     converted: console.log(result)
         // })
         // this.handleChange;
-        if(this.state.from == 'GBP' && this.state.to == 'USD'){
+        if(this.state.from === 'GBP' && this.state.to === 'USD'){
             this.setState({
                     result: console.log((this.state.amount) * (this.state.usd))
             })
-        }else if(this.state.from == 'USD' && this.state.to == 'GBP'){
+        }else if(this.state.from === 'USD' && this.state.to === 'GBP'){
             // return result = (this.state.amount) * (this.state.gbp)
-        }else if(this.state.from == 'EUR' && this.state.to == 'USD'){
+        }else if(this.state.from === 'EUR' && this.state.to === 'USD'){
             // console.log(result)
             // return result = (parseInt(this.state.amount)) * (parseInt(this.state.usd))
             

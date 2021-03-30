@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import usdlogo from '../Assets/Images/Bitmap.png'
 import gbplogo from '../Assets/Images/Bitmap (1).png'
 import eurlogo from '../Assets/Images/Bitmap (2).png'
@@ -8,10 +7,7 @@ import exchange from '../Assets/Images/opposite.svg';
 import calculator from '../Assets/Images/calculator.png';
 import './index.css'
 class CurrencyConverter extends Component {
-  constructor() {
-    super();
-
-    this.state = {
+  state = {
       // baseCurrency:'GBP',
       // convertToCurrency:'USD',
       baseAmount: 1,
@@ -25,25 +21,25 @@ class CurrencyConverter extends Component {
       status: 'sell'
     };
 
-    this.changeBaseCurrency = this.changeBaseCurrency.bind(this);
-    this.changeConvertToCurrency = this.changeConvertToCurrency.bind(this);
-    this.changeSellConvertToCurrency = this.changeSellConvertToCurrency.bind(this);
-    this.changeBaseAmount = this.changeBaseAmount.bind(this);
-    // this.getConvertedCurrency = this.getConvertedCurrency.bind(this);
-    this.callAPI = this.callAPI.bind(this);
-  }
+    // this.changeBaseCurrency = this.changeBaseCurrency.bind(this);
+    // this.changeConvertToCurrency = this.changeConvertToCurrency.bind(this);
+    // this.changeSellConvertToCurrency = this.changeSellConvertToCurrency.bind(this);
+    // this.changeBaseAmount = this.changeBaseAmount.bind(this);
+    // // this.getConvertedCurrency = this.getConvertedCurrency.bind(this);
+    // this.callAPI = this.callAPI.bind(this);
+  
 
   componentDidMount() {
     this.callAPI(this.state.baseCurrency)
   }
 
-  changeBaseCurrency(e) {
+  changeBaseCurrency=(e)=> {
     this.setState({ baseCurrency: e.target.value });
     this.callAPI(e.target.value)
 
   }
 
-  callAPI(base) {
+  callAPI=(base)=> {
     //  const api = `https://api.exchangeratesapi.io/latest?base=${base}`;
     const rate = 'https://fxrate.staging-cpg.online/api/v1/fx?limit=1'
 
@@ -65,7 +61,7 @@ class CurrencyConverter extends Component {
   }
 
 
-  changeConvertToCurrency(e) {
+  changeConvertToCurrency=(e)=> {
     if (e.target.value === "USD") {
       this.setState({
         currency2: { "symbol": e.target.value, "description": "US DOLLARS" }
@@ -83,7 +79,7 @@ class CurrencyConverter extends Component {
     }
   }
 
-  changeSellConvertToCurrency(e) {
+  changeSellConvertToCurrency=(e)=> {
     if (e.target.value === "USD") {
       this.setState({
         currency2: { "symbol": e.target.value, "description": "US DOLLARS" }
@@ -101,7 +97,7 @@ class CurrencyConverter extends Component {
     }
   }
 
-  changeBaseAmount(e) {
+  changeBaseAmount=(e)=> {
     this.setState({
       baseAmount: e.target.value
     });
@@ -124,7 +120,7 @@ class CurrencyConverter extends Component {
   }
 
   render() {
-    const {baseAmount, convertToCurrency, currency1, currency2, usd, eur, gbp, status } = this.state;
+    const {baseAmount, convertToCurrency, currency2, usd, eur, gbp, status } = this.state;
     // console.log(this.state.usd.buy)
     // const currencyChoice = currencies.map(currency =>
     //   <option key={currency} value={currency}> {currency} </option>      
@@ -141,7 +137,7 @@ class CurrencyConverter extends Component {
             <input type='number'
               id='base-amount'
               defaultValue={baseAmount}
-              onChange={this.changeBaseAmount} name="amount" className="form-control border-line" placeholder="amount" type="number" style={{ width: '50%' }} />
+              onChange={this.changeBaseAmount} name="amount" className="form-control border-line" placeholder="amount" style={{ width: '50%' }} />
           </div>
           {status === "sell" ? 
           <div>
